@@ -78,3 +78,30 @@ routes(pairs,queries)
 #SC:O(n)
 
 #Optimized
+
+def routes(pairs,queries):
+    for query in queries:
+        count = query[0]
+        if(query[1]=='x'):
+            print(pairs[count][0])
+        else:
+            print(pairs[count][1])
+n = int(input())
+arr = []
+for _ in range(n):
+    line = input().split()
+    arr.append(int(line[0]))
+    arr.append(int(line[1]))
+pairs = [(arr[i],arr[i+1]) for i in range(0,len(arr),2)]
+
+m = int(input())
+arr1 = []
+for _ in range(m):
+    line1 = input().split()
+    arr1.append(int(line1[0]))
+    arr1.append(line1[1])
+queries = [(arr1[i],arr1[i+1]) for i in range(0,len(arr1),2)]
+routes(pairs,queries)
+
+#TC:O(n+m)
+#SC:O(n+m)
